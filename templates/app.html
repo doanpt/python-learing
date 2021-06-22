@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Các bài báo của báo tuổi trẻ</h1>
+{% for item in articles %}
+<article>
+    <h3><a href="/article/{{item.post_id}}">{{item.title}}</a></h3>
+</article>
+{% endfor %}
+</body>
+</html>
