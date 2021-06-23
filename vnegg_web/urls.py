@@ -16,12 +16,16 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from courses import views
+from profiles import views as profiles_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view, name='home'),
     path('about/', views.about_view, name='about'),
+    path('account/', include('django.contrib.auth.urls')),
+    path('login/', profiles_views.SiteLoginView.as_view(), name='login'),
+    path('profile/', profiles_views.SiteProfileView.as_view(), name='profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
