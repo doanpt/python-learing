@@ -30,5 +30,5 @@ urlpatterns = [
     path('register/', profiles_views.SiteRegisterView.as_view(), name='register'),
     path('register_ok/', profiles_views.SiteRegisterOkeView.as_view(), name='register_ok'),
     path('logout/', profiles_views.SiteLogoutView.as_view(), name='logout'),
-    path('profile/', profiles_views.SiteProfileView.as_view(), name='profile'),
+    path('profile/', profiles_views.ProfileEditView.as_view(), name='profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
