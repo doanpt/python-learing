@@ -1,26 +1,15 @@
 # from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm, UsernameField
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
-from django import forms
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.urls import reverse
 from django.views.generic import TemplateView, FormView
+from profiles.forms import RegisterForm
 
 
 class SiteLoginView(LoginView):
     template_name = "login.html"
-
-
-class RegisterForm(UserCreationForm):
-    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'data-id': 1000}))
-
-    class Meta:
-        model = User
-        fields = ('username', 'email')
-        field_classes = {'username': UsernameField}
-        # widgets = {'email': forms.EmailInput(attrs={'required': True})}
 
 
 class SiteRegisterView(FormView):
@@ -52,7 +41,7 @@ class SiteProfileView(LoginRequiredMixin, TemplateView):
 
 
 class SiteLogoutView(LogoutView):
-        template_name = "logout.html"
+    template_name = "logout.html"
 
 # @login_required
 # def edit_profile_view(request):

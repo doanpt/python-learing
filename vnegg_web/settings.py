@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'courses.apps.CoursesConfig',
     'profiles.apps.ProfilesConfig',
+
+    # 3rd parties
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -130,6 +133,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_URL = '/login'
+
+# django recaptcha
+RECAPTCHA_PUBLIC_KEY = '6Ld_b1MbAAAAAA4zveG1HMJTJ53zbRe_zVBBxNv7'
+RECAPTCHA_PRIVATE_KEY = '6Ld_b1MbAAAAALK9AQUwvxS8BLtbqxjdGSLXsbEB'
 
 try:
     from vnegg_web.local_settings import *
