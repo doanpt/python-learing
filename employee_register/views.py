@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 
 from employee_register.forms import EmployeeForm
+from employee_register.models import Employee
 
 
 def employee_list(request):
-    return render(request, "employee_register/employee_list.html")
+    context = {'employee_list': Employee.objects.all()}
+    return render(request, "employee_register/employee_list.html", context)
 
 
 def employee_form(request):

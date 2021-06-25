@@ -1,6 +1,19 @@
 {% extends 'employee_register/base.html' %}
 {% block content %}
-<div class="container">
-    <p>We will show employee list</p>
-</div>
+    <div class="container">
+        <table class="table table-borderless">
+            <thead class="border-bottom font-weight-bold">
+            <td>Full name</td>
+            <td>Mobile</td>
+            <td>Position</td>
+            </thead>
+            {% for employee in employee_list %}
+                <tr>
+                    <td>{{ employee.fullname }}</td>
+                    <td>{{ employee.mobile }}</td>
+                    <td>{{ employee.position }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}
