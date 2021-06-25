@@ -3,9 +3,14 @@
     <div class="container">
         <table class="table table-borderless">
             <thead class="border-bottom font-weight-bold">
-            <td>Full name</td>
-            <td>Mobile</td>
-            <td>Position</td>
+            <tr>
+                <td>Full name</td>
+                <td>Mobile</td>
+                <td>Position</td>
+                <td><a href="{% url 'employee_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i>Add new
+                </a></td>
+            </tr>
             </thead>
             {% for employee in employee_list %}
                 <tr>
