@@ -99,5 +99,5 @@ class HelloViewSets(viewsets.ViewSet):
 
 class UserProfileViewSet(viewsets.ModelViewSet):
     """Handle creating and updating profiles"""
-    serializers_class = serializers.UserProfileSerializer
+    serializer_class = serializers.UserProfileSerializer
     queryset = models.UserProfile.objects.all()
