@@ -53,7 +53,7 @@ ROOT_URLCONF = 'crud_employee.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / 'employee_register/templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
