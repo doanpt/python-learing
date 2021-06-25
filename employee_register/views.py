@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from employee_register.forms import EmployeeForm
 
@@ -8,8 +8,14 @@ def employee_list(request):
 
 
 def employee_form(request):
-    form = EmployeeForm()
-    return render(request, "employee_register/employee_form.html", {'form': form})
+    if request.method == "GET":
+        form = EmployeeForm()
+        return render(request, "employee_register/employee_form.html", {'form': form})
+    else:
+        form = EmployeeForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/employee/list')
 
 
 def employee_delete(request):
