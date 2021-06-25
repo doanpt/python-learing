@@ -1,6 +1,9 @@
 {% extends 'employee_register/base.html' %}
 {% block content %}
-<div class="container">
-    <p>We will show employee form</p>
-</div>
+    <div class="container">
+        <form action="" method="post" autocomplete="off">
+            {% csrf_token %}
+            {{ form }}
+        </form>
+    </div>
 {% endblock %}
