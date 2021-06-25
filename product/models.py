@@ -13,6 +13,7 @@ class Product(models.Model):
     title = models.CharField(max_length=255, default='')
     description = models.TextField(default='')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    product_image = models.CharField(max_length=255, default='')
     price = models.IntegerField(default=0)
     active = models.BooleanField(default=True)
 
